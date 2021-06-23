@@ -4,5 +4,8 @@
 #pragma once
 
 #include <iostream>
+#include <fstream>
+#include <string>
 
 // TODO: установите здесь ссылки на дополнительные заголовки, требующиеся для программы.
+#include "Plane.h"

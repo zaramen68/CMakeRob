@@ -4,6 +4,7 @@
 #include "CMakeRob.h"
 
 using namespace std;
+using namespace Planes;
 
 int main()
 {
