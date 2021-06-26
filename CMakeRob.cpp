@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     float x, y, z;
     float delta;
     //plane plane1, plane2;
-    Point curPoint;
+    //Point curPoint;
 
     std::ifstream planeFile(argv[0]); // окрываем файл для чтения
     std::ifstream pointFile(argv[1]);
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     }
     planeFile.close();
 
-    for (int i = 0; i <= pointList.size; i + 3)
+    for (int i = 0; i <= pointList.size(); i + 3)
     {
         planeList.push_back(plane(pointList[i], pointList[i + 1], pointList[i + 2]));
     }
@@ -37,8 +37,8 @@ int main(int argc, char *argv[])
     {
         while (pointFile >> x >> y >> z)
         {
-            curPoint = Point(x, y, z);
-            for (i = 0; i <= planeList.size; i++) 
+            Point curPoint = Point(x, y, z);
+            for (int i = 0; i <= planeList.size(); i++) 
             {
                 delta = planeList[i].determinant(curPoint);
             }
