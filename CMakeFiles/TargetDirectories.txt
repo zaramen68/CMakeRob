@@ -1,0 +1,3 @@
+/home/mik/CMakeRob/CMakeFiles/rebuild_cache.dir
+/home/mik/CMakeRob/CMakeFiles/CMakeRob.dir
+/home/mik/CMakeRob/CMakeFiles/edit_cache.dir

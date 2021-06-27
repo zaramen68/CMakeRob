@@ -1,0 +1,13 @@
+[
+{
+  "directory": "/home/mik/CMakeRob/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7    -g   -o CMakeFiles/CMakeRob.dir/CMakeRob.cpp.o -c /home/mik/CMakeRob/CMakeRob.cpp",
+  "file": "/home/mik/CMakeRob/CMakeRob.cpp"
+},
+
+{
+  "directory": "/home/mik/CMakeRob/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7    -g   -o CMakeFiles/CMakeRob.dir/plane.cpp.o -c /home/mik/CMakeRob/plane.cpp",
+  "file": "/home/mik/CMakeRob/plane.cpp"
+}
+]

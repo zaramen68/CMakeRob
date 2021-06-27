@@ -1,9 +1,17 @@
 #pragma once
 struct Point
 {
-	float x;
-	float y;
-	float z;
+	double x;
+	double y;
+	double z;
 	
-	Point(float X, float Y, float Z) : x(X), y(Y), z(Z){}
+	Point()
+	{
+		this->x=0.0;
+		this->y=0.0;
+		this->z=0.0;
+	}
+	
+	Point(double X, double Y, double Z) : x(X), y(Y), z(Z){}
+	
 };
