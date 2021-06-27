@@ -64,9 +64,9 @@ int main(int argc, char *argv[])
             }
             if(goodPointsFile.is_open()&&wrongPointsFile.is_open()){
                 if(delta_fl){
-                    goodPointsFile << curPoint.x << curPoint.y << curPoint.z << endl;
+                    goodPointsFile << curPoint.x << " " << curPoint.y << " " << curPoint.z << endl;
                 } else {
-                    wrongPointsFile << curPoint.x << curPoint.y << curPoint.z << endl;
+                    wrongPointsFile << curPoint.x << " " << curPoint.y << " " << curPoint.z << endl;
                 }
             }
 
