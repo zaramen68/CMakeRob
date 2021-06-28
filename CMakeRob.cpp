@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
         std::cout << "error NO DATA FILES"<< endl;
         return 0;
     }
-    bool delta_fl = true;
+    bool delta_fl;
 
     std::string FileName = argv[2];
     std::string goodPoints;
@@ -57,12 +57,12 @@ int main(int argc, char *argv[])
         {
             Point curPoint = Point(x, y, z); // берем точку из файла точек
             delta_fl = true;
-            
+
             for (int i = 0; i < planeList.size(); i++) // перебираем плоскости в массиве плоскостей
             {
                 delta = planeList[i].determinant(curPoint); // проверяем ее положение относительно плоскости
                 if (delta <= 0.0){
-                    delta_fl = false; //перед или на плоскости
+                    delta_fl = delta_fl && false; //перед или на плоскости
                 }
                 else{
                     delta_fl = delta_fl && true; // за плоскостью
