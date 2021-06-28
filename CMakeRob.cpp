@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
         return 0;
     }
     bool delta_fl = true;
+
     std::string FileName = argv[2];
     std::string goodPoints;
     std::string wrongPoints;
@@ -21,26 +22,29 @@ int main(int argc, char *argv[])
 
     double x, y, z;
     double delta;
-    //plane plane1, plane2;
-    //Point curPoint;
 
-    std::ifstream planeFile(argv[1]); // окрываем файл для чтения
+
+    std::ifstream planeFile(argv[1]); // окрываем файлы данных для чтения
     std::ifstream pointFile(argv[2]);
 
     goodPoints = FileName + "_good.txt";
     wrongPoints = FileName + "_wrong.txt";
 
-    std::ofstream goodPointsFile(goodPoints);
+    std::ofstream goodPointsFile(goodPoints); //открываем файлы вывода результатов
     std::ofstream wrongPointsFile(wrongPoints);
+
+    // заполняем массив точек плоскостей
 
     if (planeFile.is_open())
     {
         while (planeFile >> x >> y >> z)
         {
-            pointList.push_back(Point(x, y, z));
+            pointList.push_back(Point(x, y, z)); 
         }
     }
     planeFile.close();
+
+    // заполняем массив плоскостей
 
     for (int i = 0; i < pointList.size(); i+=3)
     {
@@ -51,15 +55,17 @@ int main(int argc, char *argv[])
     {
         while (pointFile >> x >> y >> z)
         {
-            Point curPoint = Point(x, y, z);
-            for (int i = 0; i < planeList.size(); i++) 
+            Point curPoint = Point(x, y, z); // берем точку из файла точек
+            delta_fl = true;
+            
+            for (int i = 0; i < planeList.size(); i++) // перебираем плоскости в массиве плоскостей
             {
-                delta = planeList[i].determinant(curPoint);
+                delta = planeList[i].determinant(curPoint); // проверяем ее положение относительно плоскости
                 if (delta <= 0.0){
-                    delta_fl = false;
+                    delta_fl = false; //перед или на плоскости
                 }
                 else{
-                    delta_fl = true;
+                    delta_fl = delta_fl && true; // за плоскостью
                 }
             }
             if(goodPointsFile.is_open()&&wrongPointsFile.is_open()){
